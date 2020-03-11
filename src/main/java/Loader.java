@@ -22,6 +22,13 @@ public class Loader {
 
         Document doc = Jsoup.parse(htmlFile);
 
+        /*Document doc = null;
+        try {
+            doc = Jsoup.connect("https://lenta.ru/").get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
         Set<String> links = new HashSet<>();
 
         Elements elements = doc.select("img[src~=(?i)\\.(png|jpe?g)]");
